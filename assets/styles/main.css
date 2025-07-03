@@ -355,3 +355,263 @@
         transition: opacity 0s 1.5s;
     }
 
+/* Sección Servicios */
+.services-section {
+        position: relative;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section-subtitle {
+        color: #7f8c8d;
+        font-size: 1.1rem;
+    }
+    
+    .service-card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 30px 25px;
+        box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+        transition: all 0.4s ease;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #eee;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        border-color: #3498db;
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #3498db, #2c3e50);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+    }
+    
+    .service-card:hover .service-icon {
+        transform: rotate(360deg);
+        background: linear-gradient(135deg, #2c3e50, #3498db);
+    }
+    
+    .service-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #2c3e50;
+    }
+    
+    .service-features {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    
+    .service-features li {
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 8px;
+        color: #34495e;
+    }
+    
+    .service-features li:before {
+        content: "•";
+        color: #3498db;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+    
+    .service-hover-content {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, #3498db, #2c3e50);
+        color: white;
+        padding: 25px;
+        transition: all 0.4s ease;
+        opacity: 0;
+    }
+    
+    .service-card:hover .service-hover-content {
+        bottom: 0;
+        opacity: 1;
+    }
+    
+    .service-link {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-block;
+        margin-top: 15px;
+        transition: all 0.3s ease;
+    }
+    
+    .service-link:hover {
+        color: #f1c40f;
+        transform: translateX(5px);
+    }
+    
+    @media (max-width: 768px) {
+        .service-card {
+            padding: 20px 15px;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 25px;
+        }
+        
+        .service-hover-content {
+            position: relative;
+            bottom: auto;
+            opacity: 1;
+            background: transparent;
+            color: inherit;
+            padding: 15px 0 0 0;
+        }
+        
+        .service-link {
+            color: #3498db;
+        }
+    }
+
+/* Sección Proyectos */
+    .featured-projects {
+        position: relative;
+    }
+    
+    .project-card {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        background: white;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .project-img-container {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .project-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .project-card:hover .project-img {
+        transform: scale(1.05);
+    }
+    
+    .project-overlay {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+    }
+    
+    .project-badge {
+        background: #0d6efd;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        display: inline-block;
+    }
+    
+    .project-body {
+        padding: 20px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .project-title {
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    
+    .project-client {
+        color: #6c757d;
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+    
+    .project-desc {
+        color: #495057;
+        margin-bottom: 15px;
+        flex: 1;
+    }
+    
+    .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .project-tech span {
+        background: #f8f9fa;
+        color: #0d6efd;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        border: 1px solid #dee2e6;
+    }
+    
+    /* Efecto de borde superior */
+    .project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #0d6efd, #00b4ff);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+    
+    .project-card:hover::before {
+        transform: scaleX(1);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+        .project-img-container {
+            height: 180px;
+        }
+        
+        .project-body {
+            padding: 15px;
+        }
+    }
