@@ -1,31 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <!-- Mismo head que index.html -->
-    <link rel="stylesheet" href="assets/css/servicios.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - MISSA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/servicios.css">
 </head>
-<body>
-    <!-- Mismo navbar que index.html -->
 
-    <main class="servicios-main">
-        <section class="py-5">
-            <div class="container">
-                <h1 class="text-center mb-5">Nuestros Servicios</h1>
-                
-                <div class="row g-4">
-                    <div class="col-md-4">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <i class="fas fa-bolt"></i>
-                                <h3>Instalaciones Industriales</h3>
-                                <p>Diseño e implementación de sistemas eléctricos completos.</p>
-                            </div>
-                        </div>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/Logo.png" alt="Logo MISSA" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Dinámico -->
+    <section class="services-hero position-relative overflow-hidden">
+        <!-- Canvas dinámico -->
+        <canvas id="servicesCanvas" class="position-absolute top-0 start-0 w-100 h-100"></canvas>
+        
+        <!-- Capa de overlay -->
+        <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+        
+        <!-- Contenido -->
+        <div class="container position-relative z-2 py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">
+                        <span class="d-inline-block">Nuestros Servicios</span>
+                        <span class="d-inline-block text-primary">Industriales</span>
+                    </h1>
+                    <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">
+                        Soluciones tecnológicas que impulsan tu productividad
+                    </p>
+                    
+                    <!-- Efecto de máquina de escribir -->
+                    <div class="typewriter-container mb-4 animate__animated animate__fadeIn animate__delay-2s">
+                        <p class="typewriter-text h4" id="typewriter"></p>
                     </div>
-                    <!-- Repetir para otros servicios -->
+                    
+                    <div class="scroll-prompt animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="scroll-text">Desplázate para descubrir</div>
+                    <a href="#nuestros-servicios" class="scroll-icon">
+                        <i class="fas fa-angle-down"></i>
+                    </a>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+        
+        <!-- Flecha de scroll -->
+        <a href="#nuestros-servicios" class="scroll-down animate__animated animate__bounce animate__infinite animate__delay-3s">
+            <i class="fas fa-angle-down"></i>
+        </a>
+        
+        <!-- Elementos flotantes -->
+        <div class="floating-elements">
+            <div class="floating-element element-1">
+                <i class="fas fa-cog"></i>
+            </div>
+            <div class="floating-element element-2">
+                <i class="fas fa-microchip"></i>
+            </div>
+            <div class="floating-element element-3">
+                <i class="fas fa-bolt"></i>
+            </div>
+        </div>
+    </section>
 
-    <!-- Mismo footer que index.html -->
+    <!-- Servicios -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Transmisión de potencia mecánica -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <span class="category-badge">Potencia Mecánica</span>
+                        <img src="assets/images/potencia.jpg" alt="Transmisión de potencia mecánica" class="service-img">
+                        <div class="p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h3>Transmisión de Potencia Mecánica</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0 ps-0">Motores eléctricos</li>
+                                <li class="list-group-item border-0 ps-0">Reductores de velocidad</li>
+                                <li class="list-group-item border-0 ps-0">Cadenas y transportadores</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Accionamiento eléctrico -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <span class="category-badge">Accionamiento</span>
+                        <img src="assets/images/electrica.png" alt="Accionamiento eléctrico" class="service-img">
+                        <div class="p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <h3>Accionamiento Eléctrico</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0 ps-0">Arrancadores convencionales y electrónicos</li>
+                                <li class="list-group-item border-0 ps-0">Centros de control de motores (CCM)</li>
+                                <li class="list-group-item border-0 ps-0">Switchgear y protecciones</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controladores de proceso -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <span class="category-badge">Control</span>
+                        <img src="assets/images/control.png" alt="Controladores de proceso" class="service-img">
+                        <div class="p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <h3>Controladores de Proceso</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0 ps-0">PLCs y HMIs</li>
+                                <li class="list-group-item border-0 ps-0">Sistemas SCADA</li>
+                                <li class="list-group-item border-0 ps-0">Comunicación industrial</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Instrumentación de procesos -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <span class="category-badge">Instrumentación</span>
+                        <img src="assets/images/procesos.png" alt="Instrumentación de procesos" class="service-img">
+                        <div class="p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-tachometer-alt"></i>
+                            </div>
+                            <h3>Instrumentación de Procesos</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0 ps-0">Medición de flujo, presión, nivel</li>
+                                <li class="list-group-item border-0 ps-0">Control de temperatura</li>
+                                <li class="list-group-item border-0 ps-0">Sistemas de telemetría</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Control estándar -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <span class="category-badge">Control</span>
+                        <img src="assets/images/estandar.png" alt="Control estándar" class="service-img">
+                        <div class="p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-sliders-h"></i>
+                            </div>
+                            <h3>Control Estándar</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0 ps-0">Contactores y guardamotores</li>
+                                <li class="list-group-item border-0 ps-0">Sensores industriales</li>
+                                <li class="list-group-item border-0 ps-0">Componentes eléctricos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Manejo de energía -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <span class="category-badge">Energía</span>
+                        <img src="assets/images/energia.png" alt="Manejo de energía" class="service-img">
+                        <div class="p-4">
+                            <div class="service-icon">
+                                <i class="fas fa-charging-station"></i>
+                            </div>
+                            <h3>Manejo de Energía</h3>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item border-0 ps-0">Bancos de compensación</li>
+                                <li class="list-group-item border-0 ps-0">Transferencias automáticas</li>
+                                <li class="list-group-item border-0 ps-0">Generación eléctrica</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Km7 Carretera sur, contiguo al BCN, Nicaragua</p>
+                    <p><i class="fas fa-phone"></i> 2265-0500</p>
+                    <p><i class="fas fa-globe"></i> <a href="http://www.morrissallick.com" class="text-white">www.morrissallick.com</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Inicio</a></li>
+                        <li><a href="proyectos.html" class="text-white">Proyectos</a></li>
+                        <li><a href="productos.html" class="text-white">Productos</a></li>
+                        <li><a href="contacto.html" class="text-white">Contacto</a></li>
+                        <li><a href="nosotros.html" class="text-white">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociales</h5>
+                    <a href="#" class="text-white me-2"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="https://www.linkedin.com/company/missa-nicaragua/" class="text-white me-2"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-youtube fa-2x"></i></a>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2023 MISSA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configuración del canvas dinámico
+            const canvas = document.getElementById('servicesCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Ajustar tamaño del canvas
+            function resizeCanvas() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            }
+            
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+            
+            // Partículas para el fondo
+            const particles = [];
+            const particleCount = Math.floor(window.innerWidth / 10);
+            
+            // Crear partículas
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 1,
+                    speed: Math.random() * 0.5 + 0.1,
+                    color: `rgba(255, 255, 255, ${Math.random() * 0.05 + 0.02})`
+                });
+            }
+            
+            // Animación del canvas
+            function animateCanvas() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                // Actualizar y dibujar partículas
+                particles.forEach(p => {
+                    p.y += p.speed;
+                    if (p.y > canvas.height) p.y = 0;
+                    
+                    ctx.fillStyle = p.color;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+                
+                requestAnimationFrame(animateCanvas);
+            }
+            
+            animateCanvas();
+            
+            // Efecto máquina de escribir
+            const typewriterText = document.getElementById('typewriter');
+            const phrases = [
+                "Automatización industrial",
+                "Control de procesos",
+                "Sistemas SCADA",
+                "Soluciones eléctricas",
+                "Instrumentación avanzada"
+            ];
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            let isEnd = false;
+            
+            function typeWriter() {
+                const currentPhrase = phrases[phraseIndex];
+                
+                if (isDeleting) {
+                    typewriterText.textContent = currentPhrase.substring(0, charIndex - 1);
+                    charIndex--;
+                } else {
+                    typewriterText.textContent = currentPhrase.substring(0, charIndex + 1);
+                    charIndex++;
+                }
+                
+                if (!isDeleting && charIndex === currentPhrase.length) {
+                    isEnd = true;
+                    setTimeout(typeWriter, 1500);
+                } else if (isDeleting && charIndex === 0) {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(typeWriter, 500);
+                } else {
+                    const speed = isDeleting ? 50 : isEnd ? 1000 : 100;
+                    setTimeout(typeWriter, speed);
+                    
+                    if (isEnd) {
+                        isEnd = false;
+                        isDeleting = true;
+                    }
+                }
+            }
+            
+            // Iniciar efecto después de 2 segundos
+            setTimeout(typeWriter, 2000);
+            
+            // Scroll suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
