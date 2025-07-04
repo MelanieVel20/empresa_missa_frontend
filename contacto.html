@@ -1,33 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <!-- Mismo head que index.html -->
-    <link rel="stylesheet" href="assets/css/contacto.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Contacto - MISSA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/styles/contacto.css">
 </head>
+
 <body>
-    <!-- Mismo navbar que index.html -->
-
-    <main>
-        <section class="contacto-hero py-5">
-            <div class="container">
-                <h1>Contáctenos</h1>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/Logo.png" alt="Logo MISSA" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="proyectos.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+                </ul>
             </div>
-        </section>
+        </div>
+    </nav>
 
-        <section class="py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6">
-                        <form class="contact-form">
-                            <!-- Formulario de contacto -->
-                        </form>
+    <!-- Hero Section con fondo generado dinámicamente -->
+<section class="dynamic-hero text-center" id="dynamic-hero">
+    <div class="hero-canvas" id="heroCanvas"></div>
+    <div class="hero-content">
+        <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">Conectemos nuestras ideas</h1>
+        <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">Tu proyecto merece soluciones excepcionales. Hablemos sobre cómo podemos ayudarte.</p>
+        <a href="#contact-form" class="btn btn-light btn-lg px-5 py-3 btn-contact-hero animate__animated animate__fadeInUp animate__delay-1s">
+            <span class="btn-text">Escríbenos</span>
+            <span class="btn-icon ms-2"><i class="fas fa-chevron-down"></i></span>
+        </a>
+    </div>
+    <div class="scroll-indicator animate__animated animate__bounce animate__infinite animate__delay-2s">
+        <i class="fas fa-angle-down"></i>
+    </div>
+</section>
+
+    <!-- Sección de información de contacto -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="contact-card text-center p-5 h-100">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visítanos</h3>
+                        <p>Km7 Carretera sur, contiguo al BCN<br>Managua, Nicaragua</p>
                     </div>
-                    <div class="col-md-6">
-                        <!-- Información de contacto -->
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-card text-center p-5 h-100">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Llámanos</h3>
+                        <p>Teléfono: <a href="tel:+50522650500">2265-0500</a></p>
+                        <p>Móvil: <a href="tel:+50588888888">8888-8888</a></p>
+                        <!--<img src="assets/images/atencion.jpg" alt="Atención telefónica" class="img-fluid rounded mt-3">-->
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-card text-center p-5 h-100">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Escríbenos</h3>
+                        <p>Email: <a href="mailto:info@missa.com">info@missa.com</a></p>
+                        <p>Soporte: <a href="mailto:soporte@missa.com">soporte@missa.com</a></p>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- Mismo footer que index.html -->
+    <!-- Sección de formulario y mapa -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">Envíanos un mensaje</h2>
+                    <p class="mb-5">Completa el formulario y nos pondremos en contacto contigo en menos de 24 horas.</p>
+                    
+                    <form id="contact-form" class="needs-validation" novalidate>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Nombre completo" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" placeholder="Asunto">
+                            </div>
+                            <div class="col-12">
+                                <select class="form-select" required>
+                                    <option value="" selected disabled>Selecciona un servicio</option>
+                                    <option>Automatización Industrial</option>
+                                    <option>Instalaciones Eléctricas</option>
+                                    <option>Sistemas SCADA</option>
+                                    <option>Consultoría</option>
+                                    <option>Otro</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-control" rows="5" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-contact">Enviar Mensaje</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-map" id="map">
+                        <!-- El iframe se insertará dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección del equipo de contacto -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Conoce a nuestro equipo</h2>
+                <p class="lead">Las personas detrás de tus soluciones industriales</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4 col-lg-3 text-center">
+                    <img src="assets/images/emple_m.png" alt="Gerente de proyectos" class="mb-3">
+                    <h4>Juan Pérez</h4>
+                    <p class="text-muted">Gerente de Proyectos</p>
+                    <a href="mailto:juan.perez@missa.com" class="text-decoration-none">juan.perez@missa.com</a>
+                </div>
+                <div class="col-md-4 col-lg-3 text-center">
+                    <img src="assets/images/emple_w.png" alt="Ingeniero eléctrico" class="mb-3">
+                    <h4>María Gómez</h4>
+                    <p class="text-muted">Ingeniera Eléctrica</p>
+                    <a href="mailto:maria.gomez@missa.com" class="text-decoration-none">maria.gomez@missa.com</a>
+                </div>
+                <div class="col-md-4 col-lg-3 text-center">
+                    <img src="assets/images/emple_m.png" alt="Soporte técnico" class="mb-3">
+                    <h4>Carlos Rodríguez</h4>
+                    <p class="text-muted">Soporte Técnico</p>
+                    <a href="mailto:carlos.rodriguez@missa.com" class="text-decoration-none">carlos.rodriguez@missa.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> Km7 Carretera sur, contiguo al BCN, Nicaragua</p>
+                    <p><i class="fas fa-phone"></i> 2265-0500</p>
+                    <p><i class="fas fa-globe"></i> <a href="http://www.morrissallick.com" class="text-white">www.morrissallick.com</a></p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="Inicio.html" class="text-white">Inicio</a></li>
+                        <li><a href="proyectos.html" class="text-white">Proyectos</a></li>
+                        <li><a href="servicios.html" class="text-white">Servicios</a></li>
+                        <li><a href="nosotros.html" class="text-white">Nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Redes Sociales</h5>
+                    <a href="#" class="text-white me-2"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="https://www.linkedin.com/company/missa-nicaragua/" class="text-white me-2"><i class="fab fa-linkedin fa-2x"></i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-youtube fa-2x"></i></a>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center mb-0">&copy; 2023 MISSA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Función para cargar el mapa embed
+        function loadGoogleMapEmbed() {
+            const mapContainer = document.getElementById('map');
+            const isMobile = window.innerWidth <= 768;
+            
+            if (isMobile) {
+                // Versión para móviles (imagen estática + enlace)
+                mapContainer.innerHTML = `
+                    <a href="https://www.google.com/maps/place/MISSA+INDUSTRIAL+SUPPLY+DE+NICARAGUA+S.A/@12.1216061,-86.3088286,17z/data=!3m1!4b1!4m6!3m5!1s0x8f71550017618bbb:0x28defdc6255a2ecc!8m2!3d12.1216061!4d-86.3088286!16s%2Fg%2F11h0n3wqyq?entry=ttu" 
+                    target="_blank" 
+                    style="display:block;height:100%;position:relative;">
+                        <img src="assets/images/map_m.webp" alt="Ubicación MISSA" 
+                            style="width:100%;height:100%;object-fit:cover;">
+                        <div style="position:absolute;bottom:20px;left:0;right:0;text-align:center;">
+                            <span style="background:var(--primary-color);color:white;padding:8px 16px;border-radius:50px;">
+                                Abrir en Google Maps
+                            </span>
+                        </div>
+                    </a>
+                `;
+            } else {
+                // Versión para desktop (iframe embed)
+                mapContainer.innerHTML = `
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d281.6794528674488!2d-86.3088285524297!3d12.121606099385488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f71550017618bbb%3A0x28defdc6255a2ecc!2sMISSA%20INDUSTRIAL%20SUPPLY%20DE%20NICARAGUA%20S.A!5e0!3m2!1ses!2sni!4v1751661013218!5m2!1ses!2sni" 
+                            width="600" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                `;
+            }
+        }
+
+        // Cargar el mapa cuando la página esté lista
+        document.addEventListener('DOMContentLoaded', function() {
+            loadGoogleMapEmbed();
+            
+            // Volver a cargar al cambiar el tamaño de la ventana (si cambia de móvil a desktop)
+            window.addEventListener('resize', function() {
+                loadGoogleMapEmbed();
+            });
+        });
+
+        // Validación de formulario
+        (function() {
+            'use strict';
+            var forms = document.querySelectorAll('.needs-validation');
+            
+            Array.prototype.slice.call(forms).forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Crear fondo dinámico con canvas
+    const canvas = document.createElement('canvas');
+    const heroCanvas = document.getElementById('heroCanvas');
+    heroCanvas.appendChild(canvas);
+    
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    
+    const ctx = canvas.getContext('2d');
+    
+    // Configuración de las partículas
+    const particles = [];
+    
+     // Configuración responsive de partículas
+    const particleCount = () => {
+        if (window.innerWidth < 480) return 20;
+        if (window.innerWidth < 768) return 40;
+        return 80;
+    };
+    
+    // Modificar la creación de partículas para usar la función responsive
+    for (let i = 0; i < particleCount(); i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 2 + 1, // Tamaño más pequeño en móviles
+            speedX: Math.random() * 0.8 - 0.4, // Movimiento más lento
+            speedY: Math.random() * 0.8 - 0.4,
+            color: `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1})` // Más transparente
+        });
+    }
+    
+    // Animación del fondo
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Actualizar y dibujar partículas
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+            
+            // Mover partículas
+            p.x += p.speedX;
+            p.y += p.speedY;
+            
+            // Rebotar en los bordes
+            if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+            
+            // Dibujar partícula
+            ctx.fillStyle = p.color;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Conectar partículas cercanas
+            for (let j = i + 1; j < particles.length; j++) {
+                const p2 = particles[j];
+                const distance = Math.sqrt(
+                    Math.pow(p.x - p2.x, 2) + 
+                    Math.pow(p.y - p2.y, 2)
+                );
+                
+                if (distance < 100) {
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance/100})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.stroke();
+                }
+            }
+        }
+        
+        requestAnimationFrame(animate);
+    }
+    
+    // Iniciar animación
+    animate();
+    
+    // Redimensionar canvas al cambiar tamaño de ventana
+    window.addEventListener('resize', function() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    });
+    
+    // Scroll suave al formulario
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+</script>
 </body>
 </html>
